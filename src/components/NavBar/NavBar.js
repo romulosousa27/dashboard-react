@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 
-class MenuSuperior extends Component {
+class NavBar extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -17,3 +17,5 @@ class MenuSuperior extends Component {
         )
     }
 }
+
+export default NavBar
