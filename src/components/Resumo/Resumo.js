@@ -23,7 +23,7 @@ class Resumo extends Component {
     }
 
     componentDidMount() {
-        fetch("http://www.devup.com.br/php/api-dashboard/api")
+        fetch("http://devup.com.br/php/api-dashboard/api/resumo")
             .then(result => result.json().then(data => this.setState(data)));
     }
 
@@ -66,9 +66,9 @@ class Resumo extends Component {
                                             style: "currency",
                                             currency: "BRL"
                                         })}
-                                        <span className="badge badge-success ml-1">
-                                        {this.state.faturamento.anterior.comparativo}%
-                                    </span>
+                                        <span className={ "badge ml-1 " + (this.state.faturamento.anterior.comparativo> 0 ? "badge-success" : "badge-danger")}>
+                                            {this.state.faturamento.anterior.comparativo}%
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@ class Resumo extends Component {
                                             style: "currency",
                                             currency: "BRL"
                                         })}
-                                        <span className="badge badge-success ml-1">
+                                        <span className={ "badge ml-1 " + (this.state.faturamento.previsao.comparativo> 0 ? "badge-success" : "badge-danger")}>
                                         {this.state.faturamento.previsao.comparativo}%
                                     </span>
                                     </div>
