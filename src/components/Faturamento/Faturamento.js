@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { faturamento} from "../../Services/faturamento";
 
 class Faturamento extends Component {
     constructor(propos) {
@@ -9,8 +10,7 @@ class Faturamento extends Component {
     }
 
     componentDidMount() {
-        fetch("http://devup.com.br/php/api-dashboard/api/faturamento")
-            .then(result => result.json().then(data => this.setState(data)));
+        faturamento().then(data => this.setState(data));
     }
 
     render() {

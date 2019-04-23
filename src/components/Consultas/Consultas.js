@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { consultas} from "../../Services/consultas";
 
 class Consultas extends Component {
     constructor(propos) {
@@ -10,8 +11,7 @@ class Consultas extends Component {
     }
 
     componentDidMount() {
-        fetch("http://devup.com.br/php/api-dashboard/api/consultas")
-            .then(result => result.json().then(data => this.setState(data)));
+        consultas().then(data => this.setState(data));
     }
 
     render() {
@@ -74,4 +74,5 @@ class Consultas extends Component {
         );
     }
 }
+
 export default Consultas
